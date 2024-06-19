@@ -33,7 +33,7 @@ def get_http_response(ip):
                 response = http.request('GET', url, timeout=5)
                 return get_text_from_html(response.data.decode('utf-8'))
             except Exception:
-                print(f"SSL Error: {url}")
+                print(f"This is not HTTP: {url}")
                 return None
         else:
             print(f"This is not HTTP: {url}")
@@ -79,8 +79,32 @@ def validate_cidr(cidr):
     except ValueError:
         return False
 
+def show_initial_text():
+    """Show initial text 'IP Orign' and 'by honeyb33z'."""
+    print("""
+
+
+  _____ _____     ____       _               _______             _             
+ |_   _|  __ \   / __ \     (_)             |__   __|           | |            
+   | | | |__) | | |  | |_ __ _  __ _ _ __      | |_ __ __ _  ___| | _____ _ __ 
+   | | |  ___/  | |  | | '__| |/ _` | '_ \     | | '__/ _` |/ __| |/ / _ \ '__|
+  _| |_| |      | |__| | |  | | (_| | | | |    | | | | (_| | (__|   <  __/ |   
+ |_____|_|       \____/|_|  |_|\__, |_| |_|    |_|_|  \__,_|\___|_|\_\___|_|   
+  _             _               __/ |        _    ____ ____                    
+ | |           | |             |___/        | |  |___ \___ \                   
+ | |__  _   _  | |__   ___  _ __   ___ _   _| |__  __) |__) |___               
+ | '_ \| | | | | '_ \ / _ \| '_ \ / _ \ | | | '_ \|__ <|__ <_  /               
+ | |_) | |_| | | | | | (_) | | | |  __/ |_| | |_) |__) |__) / /                
+ |_.__/ \__, | |_| |_|\___/|_| |_|\___|\__, |_.__/____/____/___|               
+         __/ |                          __/ |                                  
+        |___/                          |___/                                   
+                                       
+                                       
+    """)
+
 if __name__ == "__main__":
     try:
+        show_initial_text()
         while True:
             choice = input("Do you want to check a single IP or a CIDR range? (Enter 'ip' or 'cidr'): ").strip().lower()
             if choice in ['ip', 'cidr']:
