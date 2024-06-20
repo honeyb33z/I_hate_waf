@@ -15,10 +15,10 @@ from ipaddress import ip_network, ip_address
 import ssl
 import time
 
-# Menonaktifkan semua peringatan SSL/TLS (TIDAK AMAN)
+# Disabling all SSL/TLS warnings
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
-# Mengatur cipher suite untuk mengatasi masalah DH_KEY_TOO_SMALL
+# Setting cipher suite to resolve DH_KEY_TOO_SMALL error
 ssl_context = ssl.create_default_context()
 ssl_context.set_ciphers('DEFAULT:@SECLEVEL=1')
 ssl_context.check_hostname = False
