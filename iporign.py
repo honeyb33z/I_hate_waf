@@ -1,3 +1,14 @@
+# Use Python 3.12.1
+#
+# Run:
+# python3 iporign.py
+#
+# Make your selection:
+#
+# Do you want to check a single IP or a CIDR range? (Enter 'ip' or 'cidr'):
+# Enter the CIDR range (e.g., 192.168.0.0/24):
+# Enter the keyword to check (e.g., early):
+
 import urllib3
 from bs4 import BeautifulSoup
 from ipaddress import ip_network, ip_address
