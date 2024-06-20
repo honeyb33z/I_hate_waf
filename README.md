@@ -3,3 +3,14 @@ The scanned HTTP responses will contain keywords similar to the website hidden b
 For example, from the website's SMTP domain, followed by scanning the entire allocated IP address range.
 
 Use Python 3.12.1
+
+run: <br>
+python3 iporign.py
+<br>
+<br><br>
+Make your selection: <br> <br>
+Do you want to check a single IP or a CIDR range? (Enter 'ip' or 'cidr'): <br>
+Enter the CIDR range (e.g., 192.168.0.0/24): <br>
+Enter the keyword to check (e.g., early): <br>
+
+
